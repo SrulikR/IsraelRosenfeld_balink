@@ -17,6 +17,7 @@ controller.create =  function(req, res, next) {
 controller.getById = function(req, res, next) {
     if (!req.params.id)
     return res.send("there are not an id in your request to get you data");
+    //send id from the person owner
    result = db.getById(req.params.id).
    then(result => 
     {

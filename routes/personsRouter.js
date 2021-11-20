@@ -9,7 +9,9 @@ const controller = require('../controllers/personsController')
 
 /* GET person by id. */
 router.get('/get/:id?', function(req, res, next) {
+  //console.log("beforeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee",req.params, req.body, res);
   controller.getById(req, res);
+ // console.log("afterrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrr", res);
 })
 
 /* GET all persons listing. */

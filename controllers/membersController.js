@@ -1,17 +1,18 @@
 const db = require('../models/memberDb')
-const animalController = require('./animalsController');
+const animalsController = require('./animalsController');
 const personsController = require('./personsController');
 const controller={};
 
 
 controller.create =  function(req, res, next) {
 
-    db.create(req.body).
-    then(result => 
-        res.send(result.command + "a membership success!")
-    )
-    .catch(err => res.send("error:" + err.message))
-
+    if(personsController.isExist(req.body.id_person) && animalsController.isExist(req.body.id_animal)){
+        db.create(req.body).
+        then(result => 
+            res.send(result.command + "a membership success!")
+        )
+        .catch(err => res.send("error:" + err.message))
+    }
 }
    
 controller.getById = function(req, res, next) {

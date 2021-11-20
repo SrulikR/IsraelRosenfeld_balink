@@ -58,4 +58,10 @@ controller.delete = function(req, res, next) {
     .catch(err=> res.send("Error exist trough deleted"))
 }
 
+controller.isExist = function(id) { 
+    db.getAnimalById(id).
+    then(result => result.count >0 ? true: false)
+    .catch(err =>  {return ("error by id, there not exist")})
+}
+
 module.exports = controller;

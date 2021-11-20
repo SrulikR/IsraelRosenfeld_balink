@@ -1,0 +1,393 @@
+{
+	"info": {
+		"_postman_id": "e086e569-b09d-4493-a295-2c0d0097f51b",
+		"name": "balink",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "create person",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n\"firstname\" : \"sara\",\r\n\"lastname\":\"stein\",\r\n\"phonenumber\": \"161666\",\r\n\"city\" : \"neve\",\r\n\"country\" : \"uk\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/api/persons/create",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"persons",
+						"create"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "get person id",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3000/api/persons/get/98",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"persons",
+						"get",
+						"98"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "get person id not exist",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3000/api/persons/get/234",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"persons",
+						"get",
+						"234"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "persons all",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3000/api/persons/all",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"persons",
+						"all"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "person delete id not exist",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"id\" : 78\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/api/persons/delete",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"persons",
+						"delete"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "person delete",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"id\" : 123\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/api/persons/delete",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"persons",
+						"delete"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "create animal",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n\"name\" : \"sara11\",\r\n\"species\":\"cat11\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/api/animals/create",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"animals",
+						"create"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "get animal id",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3000/api/animals/get/7",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"animals",
+						"get",
+						"7"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "animals all",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3000/api/animals/all",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"animals",
+						"all"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "delete animal not exist",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"id\" : 17\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/api/animals/delete",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"animals",
+						"delete"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "update animals",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"id\": 6,\r\n    \"name\" : \"update6\",\r\n    \"species\":\"update6\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/api/animals/update",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"animals",
+						"update"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "create member",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"id_person\" : 128,\r\n    \"id_animal\":3\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/api/members/create",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"members",
+						"create"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "get member id",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3000/api/members/get/128",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"members",
+						"get",
+						"128"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "members all",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3000/api/members/all",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"members",
+						"all"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "person get id with url on heroku",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://balink-israel-rosenfeld.herokuapp.com/api/persons/get/98",
+					"protocol": "https",
+					"host": [
+						"balink-israel-rosenfeld",
+						"herokuapp",
+						"com"
+					],
+					"path": [
+						"api",
+						"persons",
+						"get",
+						"98"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

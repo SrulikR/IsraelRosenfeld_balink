@@ -15,10 +15,12 @@ async function createPerson(data){
 }
 
 async function getPersonById (id){ 
-const person = await sql`
+  //console.log(id);
+  const person = await sql`
   select * from persons
   where id = ${id}`;
-
+  
+  //console.log(person);
   return person;
 }
 

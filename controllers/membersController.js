@@ -4,15 +4,19 @@ const personsController = require('./personsController');
 const controller={};
 
 
-controller.create =  function(req, res, next) {
-
-    if(personsController.isExist(req.body.id_person) && animalsController.isExist(req.body.id_animal)){
+controller.create = async function(req, res, next) {
+    
+    //console.log(req.body.id_person, req.body.id_animal)
+    
+    //check if ther exist this person and this animal
+    if(await personsController.isExist(req.body.id_person) == true && await animalsController.isExist(req.body.id_animal) == true ){
         db.create(req.body).
         then(result => 
-            res.send(result.command + "a membership success!")
+            res.send(result.command + " a membership success!")
         )
         .catch(err => res.send("error:" + err.message))
     }
+    else (res.send("id person\\animal not exsit:"))
 }
    
 controller.getById = function(req, res, next) {
@@ -22,11 +26,9 @@ controller.getById = function(req, res, next) {
    result = db.getById(req.params.id).
    then(result => 
     {
-        //console.log(result);
         if(result.count > 0){
             let list = { "id": req.params.id};
             list = {...list,"id_animal":result.map((x=> x.id_animal))};
-
            // console.log(list);
             res.send(list)
         }else throw new Error("not exist");

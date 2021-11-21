@@ -43,25 +43,26 @@ controller.update = function(req, res, next) {
     .catch(err=> res.send("Error exist trough updated"))
 }
 
-controller.delete = function(req, res, next) {
+controller.delete = async function(req, res, next) {
     if (!req.id)
-    return res.send("there are not an id in your request to be delete");
+        return res.send("there are not an id in your request to be delete");
     let id = req.id;
-    result = db.getAnimalById(id).
-    then(result => {
-        if(result.count > 0)
+    if(await this.isExist(id) == true){
         db.deleteAnimalById(id).
-        then(result => {res.send(result.command +" "+ id + " success!");})
-        else res.send(id +" there are not exist to be delete")
-        }
-    )    
-    .catch(err=> res.send("Error exist trough deleted"))
+        then(result => { res.send(result.command + " " + id + " success!"); })
+        .catch(() => res.send("Error exist trough deleted"));
+    }
+    else{
+        res.send(id + " there are not exist to be delete");
+    }
 }
 
-controller.isExist = function(id) { 
-    db.getAnimalById(id).
-    then(result => result.count >0 ? true: false)
-    .catch(err =>  {return ("error by id, there not exist")})
+controller.isExist = async function(id) { 
+   return new Promise((resolve, reject) => {
+       db.getAnimalById(id).
+       then(result => (result.count > 0 ?  resolve(true): reject(false)))
+    })
+    .catch(() =>  ("error by id, there not exist"))
 }
 
 module.exports = controller;
